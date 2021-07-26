@@ -8,6 +8,8 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
 COPY ["LabsProject.BackEnd.API/LabsProject.BackEnd.API.csproj", "LabsProject.BackEnd.API/"]
+COPY ["LabsProject.BackEnd.Infrastructure/LabsProject.BackEnd.Infrastructure.csproj", "LabsProject.BackEnd.Infrastructure/"]
+COPY ["LabsProject.BackEnd.Domain/LabsProject.BackEnd.Domain.csproj", "LabsProject.BackEnd.Domain/"]
 RUN dotnet restore "LabsProject.BackEnd.API/LabsProject.BackEnd.API.csproj"
 COPY . .
 WORKDIR "/src/LabsProject.BackEnd.API"
