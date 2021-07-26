@@ -5,6 +5,6 @@ namespace LabsProject.BackEnd.Domain.Repositories
 {
     public interface IAssociateLabsWithTestsRepository: IRepositoryBase<AssociateLabsWithTests>
     {
-        void Remove(Guid id);
+        void Remove(AssociateLabsWithTests item);
     }
 }

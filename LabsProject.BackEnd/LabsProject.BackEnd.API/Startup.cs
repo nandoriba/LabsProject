@@ -1,6 +1,12 @@
+using LabsProject.BackEnd.Domain.Handlers;
+using LabsProject.BackEnd.Domain.Queries;
+using LabsProject.BackEnd.Domain.Repositories;
 using LabsProject.BackEnd.Infrastructure.Context;
+using LabsProject.BackEnd.Infrastructure.Repositories;
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -16,8 +22,7 @@ namespace LabsProject.BackEnd.API
         }
 
         public IConfiguration Configuration { get; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
+        
         public void ConfigureServices(IServiceCollection services)
         {
 
@@ -27,11 +32,17 @@ namespace LabsProject.BackEnd.API
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "LabsProject.BackEnd.API", Version = "v1" });
             });
 
+            //services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("DataBase"));
+            services.AddDbContext<DataContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("connectionString")));
 
-            services.AddDbContext<DataContext
+            services.AddTransient<AssociateLabsWithTestsConfigurationTestsHandler, AssociateLabsWithTestsConfigurationTestsHandler>();
+            services.AddTransient<LaboratoriesHandler, LaboratoriesHandler>();
+            services.AddTransient<TestsHandler, TestsHandler>();
+            services.AddTransient<IAssociateLabsWithTestsRepository, AssociateLabsWithTestsRepository>();
+            services.AddTransient<ILaboratoriesRepository, LaboratoriesRepository>();
+            services.AddTransient<ITestsRepository, TestsRepository>();
         }
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

@@ -1,6 +1,5 @@
 ﻿using LabsProject.BackEnd.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace LabsProject.BackEnd.Infrastructure.Context
 {
@@ -14,15 +13,16 @@ namespace LabsProject.BackEnd.Infrastructure.Context
         public DbSet<Laboratories> Laboratories { get; set; }
         public DbSet<Tests> Tests { get; set; }
         public DbSet<AssociateLabsWithTests> AssociateLabsWithTests { get; set; }
-     
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new LaboratoriesConfiguration());
+            modelBuilder.ApplyConfiguration(new TestConfiguration());
+            modelBuilder.ApplyConfiguration(new AssociateLabsWithTestsConfigurationTestsHandler());
+
+            base.OnModelCreating(modelBuilder);
+        }
 
     }
-    public class LaboratoriesConfiguration : IEntityTypeConfiguration<Laboratories>
-    {
-        public void Configure(EntityTypeBuilder<Laboratories> builder)
-        {            
-            builder.HasKey(x => x.Id);
-            builder.OwnsOne(x => x.Address);
-        }
-    }
+
 }

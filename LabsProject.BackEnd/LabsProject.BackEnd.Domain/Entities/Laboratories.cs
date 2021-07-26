@@ -4,7 +4,7 @@ namespace LabsProject.BackEnd.Domain.Entities
 {
     public class Laboratories: Entity
     {
-        public Laboratories(string name, Address address)
+        public Laboratories(string name, string address)
         {
             Name = name;
             Address = address;
@@ -13,7 +13,7 @@ namespace LabsProject.BackEnd.Domain.Entities
         protected Laboratories() { }
 
         public string Name { get; private set; }
-        public Address Address { get; private set; }
+        public string Address { get; private set; }
         public int StateId { get; private set; }        
 
         public void RemoveLogicLaboratories()

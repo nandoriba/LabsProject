@@ -33,19 +33,11 @@ namespace LabsProject.BackEnd.Domain.Handlers
                     "Não é possivel realizar o cadastro do Laboratório",
                     command.Notifications);
             }
-            var address = new Address(
-                    command.Street,
-                    command.Number,
-                    command.Neighborhood,
-                    command.City,
-                    command.State,
-                    command.Country,
-                    command.ZipCode
-                );
+           
 
             var laboratories = new Laboratories(
                     command.Name, 
-                    address
+                    command.Address
                 );
 
             _laboratoriesRepository.Add(laboratories);

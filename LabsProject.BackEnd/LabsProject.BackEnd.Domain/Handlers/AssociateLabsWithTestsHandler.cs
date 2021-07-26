@@ -61,7 +61,7 @@ namespace LabsProject.BackEnd.Domain.Handlers
                 "Não é possivel realizar a exclusão da associação",
                 null);
             }
-            _associateLabsWithTestsRepositories.Remove(command.Id);
+            _associateLabsWithTestsRepositories.Remove(associacao.Result);
 
             return new GenericCommandsResult(true, "Associação excluida com sucesso", "");
         }
