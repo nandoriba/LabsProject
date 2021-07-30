@@ -37,9 +37,9 @@ namespace LabsProject.BackEnd.API.Controllers
             [FromServices]LaboratoriesHandler handler )
         {
             return (GenericCommandsResult)handler.Handler(command);
-        }
-        
-        [Route("")]
+        }       
+
+        [Route("addlabs")]
         [HttpPut]
         public GenericCommandsResult Update(
             [FromBody] UpdateLaboratoriesCommand command,

@@ -25,6 +25,12 @@ namespace LabsProject.BackEnd.Infrastructure.Repositories
             _dataContext.SaveChanges();
         }
 
+        public void AddCollection(IEnumerable<Tests> collectionItem)
+        {
+            _dataContext.AddRange(collectionItem);
+            _dataContext.SaveChanges();
+        }
+
         public async Task<IEnumerable<Tests>> GetAll()
         {
             return await _dataContext
@@ -36,13 +42,25 @@ namespace LabsProject.BackEnd.Infrastructure.Repositories
 
         public async Task<Tests> GetById(Guid id)
         {
-            return await _dataContext.Tests
-                    .FindAsync(id);
+            return await _dataContext.Tests.AsNoTracking()
+            .Where(w => w.Id == id && w.StateId != State.Inactive.Id).FirstOrDefaultAsync();
         }
+
+        public void RemoveCollection(IEnumerable<Tests> collectionItem)
+        {
+            _dataContext.UpdateRange(collectionItem);
+            _dataContext.SaveChanges();
+        }
+
         public void Update(Tests item)
         {
             _dataContext.Entry(item).State = EntityState.Modified;
             _dataContext.SaveChanges();
+        }
+
+        public void UpdateCollection(IEnumerable<Tests> collectionItem)
+        {
+            throw new NotImplementedException();
         }
     }
 }

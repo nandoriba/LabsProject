@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "secrets1": {
+      "type": "secrets"
+    }
+  },
+  "ConnectionStrings": {
+    "connectionString": "Data Source=34.133.60.112;Initial Catalog=labsproject;Persist Security Info=True;User ID=sqlserver;Password=CubK3kCNjecuDxDk;"
+  }
+}

@@ -1,11 +1,13 @@
 ﻿using LabsProject.BackEnd.Domain.ValueObjects;
+using System;
 
 namespace LabsProject.BackEnd.Domain.Entities
 {
     public class Tests : Entity 
     {
-        public Tests(string name, string type)
+        public Tests(Guid id, string name, string type)
         {
+            Id = id;
             Name = name;
             Type = type;
             StateId = State.Active.Id;

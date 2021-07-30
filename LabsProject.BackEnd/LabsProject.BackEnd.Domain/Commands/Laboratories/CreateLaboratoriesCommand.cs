@@ -15,8 +15,7 @@ namespace LabsProject.BackEnd.Domain.Commands.Laboratories
         }
 
         public string Name { get;  set; }
-        public string Address { get; set; }
-        public int StateId { get; set; }
+        public string Address { get; set; }       
 
         public void Validate()
         {

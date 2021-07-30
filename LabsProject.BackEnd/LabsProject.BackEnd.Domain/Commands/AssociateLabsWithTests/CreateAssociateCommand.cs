@@ -7,8 +7,14 @@ namespace LabsProject.BackEnd.Domain.Commands.AssociateLabsWithTests
 {
     public class CreateAssociateCommand : Notifiable<Notification>, ICommand
     {
-        public Guid LaboratoriesId { get; private set; }
-        public Guid TestsId { get; private set; }
+        public CreateAssociateCommand(Guid laboratoriesId, Guid testsId)
+        {
+            LaboratoriesId = laboratoriesId;
+            TestsId = testsId;
+        }
+
+        public Guid LaboratoriesId { get; set; }
+        public Guid TestsId { get; set; }
 
         public void Validate()
         {

@@ -3,7 +3,7 @@ using LabsProject.BackEnd.Domain.Queries;
 using LabsProject.BackEnd.Domain.Repositories;
 using LabsProject.BackEnd.Infrastructure.Context;
 using LabsProject.BackEnd.Infrastructure.Repositories;
-
+using LabsProject.BackEnd.Services.Queries;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using System.Linq;
 
 namespace LabsProject.BackEnd.API
 {
@@ -30,17 +31,23 @@ namespace LabsProject.BackEnd.API
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "LabsProject.BackEnd.API", Version = "v1" });
+                //c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
             });
 
-            //services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("DataBase"));
-            services.AddDbContext<DataContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("connectionString")));
+            var connection = Configuration.GetConnectionString("connectionString");
+
+            services.AddDbContext<DataContext>(opt => opt.UseSqlServer(connection));
 
             services.AddTransient<AssociateLabsWithTestsConfigurationTestsHandler, AssociateLabsWithTestsConfigurationTestsHandler>();
+            services.AddTransient<AssociateLabsWithTestsHandler, AssociateLabsWithTestsHandler>();
             services.AddTransient<LaboratoriesHandler, LaboratoriesHandler>();
             services.AddTransient<TestsHandler, TestsHandler>();
             services.AddTransient<IAssociateLabsWithTestsRepository, AssociateLabsWithTestsRepository>();
             services.AddTransient<ILaboratoriesRepository, LaboratoriesRepository>();
             services.AddTransient<ITestsRepository, TestsRepository>();
+            services.AddTransient<IAssociateLabsWithTestsQueries>(provider => new AssociateLabsWithTestsQueries(connection));
+            services.AddTransient<ITestsQueries>(provider => new TestsQueries(connection));
+            services.AddTransient<ILaboratoriesQueries>(provider => new LaboratoriesQueries(connection));
         }
         
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

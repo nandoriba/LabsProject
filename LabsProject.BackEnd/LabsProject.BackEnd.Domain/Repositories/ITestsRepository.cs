@@ -1,4 +1,5 @@
 ﻿using LabsProject.BackEnd.Domain.Entities;
+using System.Collections.Generic;
 
 namespace LabsProject.BackEnd.Domain.Repositories
 {

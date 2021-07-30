@@ -1,17 +1,17 @@
-﻿using System;
-using Dapper;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Threading.Tasks;
+﻿using Dapper;
 using LabsProject.BackEnd.Domain.Entities;
 using LabsProject.BackEnd.Domain.Queries;
 using LabsProject.BackEnd.Domain.ValueObjects;
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Threading.Tasks;
 
 namespace LabsProject.BackEnd.Services.Queries
 {
     public class LaboratoriesQueries: ILaboratoriesQueries
     {
-        private string _connectionString = string.Empty;        
+        private string _connectionString = string.Empty;      
 
         public LaboratoriesQueries(string constr)
         {

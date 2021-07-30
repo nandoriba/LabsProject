@@ -1,11 +1,13 @@
 ﻿using LabsProject.BackEnd.Domain.ValueObjects;
+using System;
 
 namespace LabsProject.BackEnd.Domain.Entities
 {
     public class Laboratories: Entity
     {
-        public Laboratories(string name, string address)
+        public Laboratories(Guid id, string name, string address)
         {
+            Id = id;
             Name = name;
             Address = address;
             StateId = State.Active.Id;

@@ -16,6 +16,8 @@ namespace LabsProject.BackEnd.Infrastructure.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+  
+
             modelBuilder.ApplyConfiguration(new LaboratoriesConfiguration());
             modelBuilder.ApplyConfiguration(new TestConfiguration());
             modelBuilder.ApplyConfiguration(new AssociateLabsWithTestsConfigurationTestsHandler());

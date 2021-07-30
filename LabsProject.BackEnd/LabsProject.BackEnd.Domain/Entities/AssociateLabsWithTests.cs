@@ -4,8 +4,9 @@ namespace LabsProject.BackEnd.Domain.Entities
 {
     public class AssociateLabsWithTests: Entity
     {
-        public AssociateLabsWithTests(Guid laboratoriesId, Guid testsId)
+        public AssociateLabsWithTests(Guid id, Guid laboratoriesId, Guid testsId)
         {
+            Id = id;
             LaboratoriesId = laboratoriesId;
             TestsId = testsId;
         }

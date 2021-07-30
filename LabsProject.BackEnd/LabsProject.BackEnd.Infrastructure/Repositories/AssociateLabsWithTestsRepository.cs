@@ -4,6 +4,7 @@ using LabsProject.BackEnd.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace LabsProject.BackEnd.Infrastructure.Repositories
@@ -30,9 +31,9 @@ namespace LabsProject.BackEnd.Infrastructure.Repositories
         }
 
         public async Task<AssociateLabsWithTests> GetById(Guid id)
-        {
-            return await _dataContext.AssociateLabsWithTests
-                    .FindAsync(id);
+        {           
+            return await _dataContext.AssociateLabsWithTests.AsNoTracking()
+            .Where(w => w.Id == id).FirstOrDefaultAsync();
         }
 
         public void Remove(AssociateLabsWithTests item)

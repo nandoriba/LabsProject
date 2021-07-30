@@ -6,17 +6,15 @@ namespace LabsProject.BackEnd.Domain.Commands.Tests
 {
     public class CreateTestsCommand : Notifiable<Notification>, ICommand
     {
-        public CreateTestsCommand(string name, string type, int state)
+        public CreateTestsCommand(string name, string type)
         {
             Name = name;
-            Type = type;
-            State = state;
+            Type = type;            
         }
         public CreateTestsCommand() { }
 
         public string Name { get; set; }
-        public string Type { get; set; }
-        public int State { get; set; }
+        public string Type { get; set; }        
 
         public void Validate()
         {
