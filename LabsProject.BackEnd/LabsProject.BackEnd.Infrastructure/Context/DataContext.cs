@@ -15,8 +15,7 @@ namespace LabsProject.BackEnd.Infrastructure.Context
         public DbSet<AssociateLabsWithTests> AssociateLabsWithTests { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-  
+        { 
 
             modelBuilder.ApplyConfiguration(new LaboratoriesConfiguration());
             modelBuilder.ApplyConfiguration(new TestConfiguration());

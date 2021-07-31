@@ -1,12 +1,7 @@
 ﻿using LabsProject.BackEnd.Domain.Commands;
 using LabsProject.BackEnd.Domain.Commands.AssociateLabsWithTests;
 using LabsProject.BackEnd.Domain.Handlers;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace LabsProject.BackEnd.API.Controllers
 {

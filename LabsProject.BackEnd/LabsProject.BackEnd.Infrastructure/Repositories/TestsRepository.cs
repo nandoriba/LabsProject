@@ -23,13 +23,7 @@ namespace LabsProject.BackEnd.Infrastructure.Repositories
         {
             _dataContext.Tests.Add(item);
             _dataContext.SaveChanges();
-        }
-
-        public void AddCollection(IEnumerable<Tests> collectionItem)
-        {
-            _dataContext.AddRange(collectionItem);
-            _dataContext.SaveChanges();
-        }
+        }    
 
         public async Task<IEnumerable<Tests>> GetAll()
         {
@@ -56,11 +50,6 @@ namespace LabsProject.BackEnd.Infrastructure.Repositories
         {
             _dataContext.Entry(item).State = EntityState.Modified;
             _dataContext.SaveChanges();
-        }
-
-        public void UpdateCollection(IEnumerable<Tests> collectionItem)
-        {
-            throw new NotImplementedException();
-        }
+        }      
     }
 }
