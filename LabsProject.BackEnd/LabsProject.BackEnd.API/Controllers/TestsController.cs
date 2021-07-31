@@ -2,6 +2,7 @@
 using LabsProject.BackEnd.Domain.Commands.Tests;
 using LabsProject.BackEnd.Domain.Entities;
 using LabsProject.BackEnd.Domain.Handlers;
+using LabsProject.BackEnd.Domain.Queries;
 using LabsProject.BackEnd.Domain.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -14,12 +15,26 @@ namespace LabsProject.BackEnd.API.Controllers
     [ApiController]
     public class TestsController : ControllerBase
     {
+        private readonly ITestsQueries _testsQueries;
+
+        public TestsController(ITestsQueries testsQueries)
+        {
+            _testsQueries = testsQueries;
+        }
+
         [Route("")]
         [HttpGet]
         public async Task<IEnumerable<Tests>> GetAll(
            [FromServices] ITestsRepository repository)
         {
             return await repository.GetAll();
+        }
+        [Route("activelabs")]
+        [HttpGet]
+        public async Task<JsonResult> GetAssociationActiveLabs(Guid idTest)
+        {
+            var result = await _testsQueries.GetTestWithActiveLabs(idTest);
+            return new JsonResult(result);
         }
 
         [Route("test")]

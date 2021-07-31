@@ -17,11 +17,10 @@ namespace LabsProject.BackEnd.API.Controllers
         [Route("")]
         [HttpGet]
         public async Task<IEnumerable<Laboratories>> GetAll(
-            [FromServices]ILaboratoriesRepository repository)
+            [FromServices] ILaboratoriesRepository repository)
         {
             return await repository.GetAll();
         }
-
         [Route("lab")] 
         [HttpGet()]
         public async Task<Laboratories> GetLab(
