@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace LabsProject.BackEnd.API.Controllers
+namespace LabsProject.BackEnd.Api.Controllers
 {
     [Route("api/v1/[controller]")]
     [ApiController]

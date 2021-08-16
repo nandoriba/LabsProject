@@ -4,7 +4,7 @@ using LabsProject.BackEnd.Domain.Handlers;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
-namespace LabsProject.BackEnd.API.Controllers
+namespace LabsProject.BackEnd.Api.Controllers
 {
     [Route("api/v1/[controller]")]
     [ApiController]

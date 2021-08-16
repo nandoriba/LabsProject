@@ -29,7 +29,7 @@ namespace LabProject.BackEnd.Api
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "LabsProject.BackEnd.API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "LabsProject.BackEnd.Api", Version = "v1" });
                 //c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
             });
 

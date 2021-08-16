@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace LabsProject.BackEnd.API.Controllers
+namespace LabsProject.BackEnd.Api.Controllers
 {
     public class HomeController : ControllerBase
     {

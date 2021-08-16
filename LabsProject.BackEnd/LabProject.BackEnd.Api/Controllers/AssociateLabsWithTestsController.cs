@@ -3,7 +3,7 @@ using LabsProject.BackEnd.Domain.Commands.AssociateLabsWithTests;
 using LabsProject.BackEnd.Domain.Handlers;
 using Microsoft.AspNetCore.Mvc;
 
-namespace LabsProject.BackEnd.API.Controllers
+namespace LabsProject.BackEnd.Api.Controllers
 {
     [Route("api/v1/[controller]")]
     [ApiController]
