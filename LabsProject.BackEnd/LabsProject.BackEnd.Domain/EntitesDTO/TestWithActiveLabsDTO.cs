@@ -3,20 +3,20 @@ using System.Collections.Generic;
 
 namespace LabsProject.BackEnd.Domain.EntitesDTO
 {
-    public record TestWithActiveLabsDTO
+    public class TestWithActiveLabsDTO
     {
-        public Guid Id { get; init; }
-        public string Name { get; init; }
-        public string Type { get; init; }
-        public int StateId { get; init; }
+        public Guid Id { get; set; }
+        public string Name { get; set ; }
+        public string Type { get; set; }
+        public int StateId { get; set; }
         public List<LaboratoriesDTO> Laboratories { get; set; }
     }
-    public record LaboratoriesDTO
+    public class LaboratoriesDTO
     {
-        public Guid Id { get; init; }
-        public string Name { get; init; }
-        public string Address { get; init; }
-        public int StateId { get; init; }
+        public Guid Id { get; set; }
+        public string Name { get; set; }
+        public string Address { get; set; }
+        public int StateId { get; set; }
     }
 
 }

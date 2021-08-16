@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31402.337
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LabsProject.BackEnd.API", "LabsProject.BackEnd.API\LabsProject.BackEnd.API.csproj", "{90F05F6C-76FA-4873-BB33-EDB4F7C431D3}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LabsProject.BackEnd.Domain", "LabsProject.BackEnd.Domain\LabsProject.BackEnd.Domain.csproj", "{BAAFD9EB-0825-4017-989F-E186CFFFBB14}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LabsProject.BackEnd.Infrastructure", "LabsProject.BackEnd.Infrastructure\LabsProject.BackEnd.Infrastructure.csproj", "{C93CBECD-C476-442F-85FF-F27C786BDD1E}"
@@ -13,16 +11,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LabsProject.BackEnd.Service
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LabsProject.BackEnd.Test", "LabsProject.BackEnd.Test\LabsProject.BackEnd.Test.csproj", "{CBD92C0C-A2FD-4C80-95E4-781BBE037063}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabProject.BackEnd.Api", "LabProject.BackEnd.Api\LabProject.BackEnd.Api.csproj", "{497D5A06-A2A6-4C05-9A78-54E32905F6B2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{90F05F6C-76FA-4873-BB33-EDB4F7C431D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{90F05F6C-76FA-4873-BB33-EDB4F7C431D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{90F05F6C-76FA-4873-BB33-EDB4F7C431D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{90F05F6C-76FA-4873-BB33-EDB4F7C431D3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BAAFD9EB-0825-4017-989F-E186CFFFBB14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BAAFD9EB-0825-4017-989F-E186CFFFBB14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAAFD9EB-0825-4017-989F-E186CFFFBB14}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{CBD92C0C-A2FD-4C80-95E4-781BBE037063}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBD92C0C-A2FD-4C80-95E4-781BBE037063}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBD92C0C-A2FD-4C80-95E4-781BBE037063}.Release|Any CPU.Build.0 = Release|Any CPU
+		{497D5A06-A2A6-4C05-9A78-54E32905F6B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{497D5A06-A2A6-4C05-9A78-54E32905F6B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{497D5A06-A2A6-4C05-9A78-54E32905F6B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{497D5A06-A2A6-4C05-9A78-54E32905F6B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

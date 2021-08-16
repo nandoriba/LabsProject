@@ -24,7 +24,7 @@ namespace LabsProject.BackEnd.Domain.ValueObjects
 
         public override bool Equals(object obj)
         {
-            if (obj is not Enumeration otherValue)
+            if (!(obj is Enumeration otherValue))
             {
                 return false;
             }
