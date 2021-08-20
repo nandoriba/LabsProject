@@ -33,7 +33,7 @@ namespace LabProject.BackEnd.Api
                 //c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
             });
 
-            var connection = Configuration.GetConnectionString("connectionString");
+            var connection = Configuration["ConnectionString: connectionString"];
 
             services.AddDbContext<DataContext>(opt => opt.UseSqlServer(connection));
 
