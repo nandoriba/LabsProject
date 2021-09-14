@@ -6,5 +6,5 @@ Cadastro de Laboratórios e Exames
 - CRUD Exames e Laboratório
 - CQRS
 - Banco SQL Server
-- .NET 5
+- .NET 3.1
 - Documentação serviço automática com swagger
